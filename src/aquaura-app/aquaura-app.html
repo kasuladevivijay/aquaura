@@ -1,0 +1,132 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../src/elements/elements.html">
+<link rel="import" href="../../src/aquaura-home/aquaura-home.html">
+<link rel="import" href="../../src/aquaura-about/aquaura-about.html">
+<link rel="import" href="../../src/aquaura-scoreboard/aquaura-scoreboard.html">
+<link rel="import" href="../../src/aquaura-teams/aquaura-teams.html">
+<link rel="import" href="../../src/aquaura-games/aquaura-games.html">
+
+<dom-module id="aquaura-app">
+
+  <template>
+
+    <style>
+
+      :host {
+        display: block;
+        --app-primary-color: #FF6040;
+        --app-secondary-color: black;
+      }
+
+      app-header {
+        background-color: var(--app-primary-color);
+        color: #fff;
+      }
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+
+      .drawer-list {
+        margin: 0 20px;
+      }
+      .drawer-list a {
+        display: block;
+        padding: 0 16px;
+        line-height: 40px;
+        text-decoration: none;
+        color: var(--app-secondary-color);
+      }
+      .drawer-list a.iron-selected {
+        color: black;
+        font-weight: bold;
+      }
+      .drawer-list a.subroute {
+        padding-left: 32px;
+      }
+
+
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
+
+    <app-drawer-layout fullbleed force-narrow>
+
+      <!-- Drawer content -->
+      <app-drawer>
+        <app-toolbar><span style="color: #999; font-weight: bold;">aquaura</span></app-toolbar>
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <a name="home" href="/home">Home</a>
+          <a name="scoreboard" href="/scoreboard">ScoreBoard</a>
+          <a name="teams" href="/teams">Teams</a>
+          <a name="games" href="/games">Games</a>
+          <a name="about" href="/about">About</a>
+          
+        </iron-selector>
+      </app-drawer>
+
+      <!-- Main content -->
+      <app-header-layout has-scrolling-region>
+
+        <app-header condenses fixed effects="fullbleed">
+          <app-toolbar>
+            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <div title spacer>aquaura</div>
+          </app-toolbar>
+        </app-header>
+
+        <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
+          <aquaura-home name="home"></aquaura-home>
+          <aquaura-scoreboard name="scoreboard"></aquaura-scoreboard>
+          <aquaura-teams name="teams"></aquaura-teams>
+          <aquaura-games name="games"></aquaura-games>
+          <aquaura-about name="about"></aquaura-about>
+          
+        </iron-pages>
+        
+      </app-header-layout>
+
+    </app-drawer-layout>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'aquaura-app',
+
+      properties: {
+
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
+        },
+
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)'
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'home';
+      },
+
+      _pageChanged: function(page) {
+        // load page import on demand.
+        this.importHref(
+          this.resolveUrl('aquaura-' + page + '.html'), null, null, true);
+        console.log("page details: ",page)
+      }
+
+    });
+
+  </script>
+
+</dom-module>

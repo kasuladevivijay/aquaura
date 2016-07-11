@@ -1,0 +1,49 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../elements/elements.html">
+
+<dom-module id="aquaura-games">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+</style>
+<style is="custom-style">
+  
+
+</style>
+  <paper-material elevation="2" layout flex style="margin:20px; text-align: center;">
+      <h2 style="padding:10px;">aquaura-games</h2>
+  </paper-material>
+
+  <paper-card elevation="3" layout flex  style="text-align: center; padding: 20px; margin: 20px;">
+      <paper-button data-dialog="logo"> Logo Making</paper-button>
+  </paper-card>
+
+  <paper-dialog id="logo">
+  <h2>Logo Making</h2>
+  <paper-dialog-scrollable>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </paper-dialog-scrollable>
+  <div class="buttons">
+    <paper-button dialog-dismiss>Cancel</paper-button>
+    <paper-button dialog-confirm>OK</paper-button>
+  </div>
+</paper-dialog>
+  
+  </template>
+  <script>
+    Polymer({
+
+      is: 'aquaura-games',     
+
+    });
+  </script>
+</dom-module>

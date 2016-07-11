@@ -1,0 +1,79 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../elements/elements.html">
+
+<dom-module id="aquaura-scoreboard">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <style is="custom-style">
+      paper-material{
+        margin: 20px;
+      }
+
+      google-chart{
+        width: 560px;
+        height: 480px;
+        margin: auto;
+      }
+     </style>
+
+     <paper-material elevation="3" layout flex>
+        <h3 style="text-align: center; padding: 10px;">aquaura-scoreboard</h3>
+     </paper-material>
+
+
+    <paper-material elevation="3" layout flex>
+
+      <paper-datatable data="{{data}}"  multi-selection>
+
+      <paper-datatable-column header="Teams/Games" property="title" type="string" disable>
+
+
+      </paper-datatable-column>
+    <paper-datatable-column header="gameOne" property="gameone" type="Number" sortable>
+            </paper-datatable-column>
+    <paper-datatable-column header="gameTwo" property="gametwo" type="Number" sortable>
+        </paper-datatable-column>
+    <paper-datatable-column header="gameThree" property="gamethree" type="Number" sortable>
+        </paper-datatable-column>
+    <paper-datatable-column header="Total" property="total" sortable type="Number" tooltip="Total Points till date">
+    </paper-datatable-column>
+    
+
+    </paper-datatable>
+
+    </paper-material>
+
+    <!-- chart -->
+  <paper-material elevation="2">
+         <google-chart
+             type='bar'
+             options='{"title": "Aquaura-2016 | Total Points"}'
+             data='[["Team","Points"],["RCB",62],["CSK",72],["RR",63],["MI",64]]'>
+    </google-chart>
+  </paper-material>
+  </template>
+  <script>
+    Polymer({
+
+      is: 'aquaura-scoreboard',
+
+      properties: {
+        data: {
+          type: Object,
+          notify: true,
+          value: [{id:0, title: 'RCB', gameone: 10, gametwo: 29, gamethree: 23, total: 62},
+                  {id:1, title: 'CSK', gameone: 20, gametwo: 29, gamethree: 23, total: 72},
+                  {id:2, title: 'RR', gameone: 30, gametwo: 19, gamethree: 14, total: 63},
+                  {id:3, title: 'MI', gameone: 10, gametwo: 29, gamethree: 24, total: 64}
+                  ]
+        }
+      }
+      
+
+    });
+  </script>
+</dom-module>

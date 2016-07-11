@@ -1,0 +1,129 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../elements/elements.html">
+
+<dom-module id="aquaura-teams">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+</style>
+<style is="custom-style">
+  paper-card{
+    --paper-card-header-image:{
+      width: 360px;
+    }
+
+    --paper-card-header-color: #fff;
+
+    --paper-card-content:{
+        text-align: center;
+      }
+    }
+ 
+   paper-material{
+          margin:auto 20px;
+    }
+
+</style>
+  <paper-material elevation="2" layout flex style="margin:20px; text-align: center;">
+      <h2 style="padding:10px;">aquaura-teams</h2>
+  </paper-material>
+
+  <paper-material elevation="3" layout flex  style="text-align: center; padding: 20px; margin: 20px;">
+  <div layout flex horizontal style="text-align: center; margin: 10px; padding: 40px;">
+    <paper-card animated elevation="4" heading="Team Name" image="/images/rain_drops_1.jpg">
+    <div class="card-content">
+      <table>
+      <th cols="3">Team Members</th>
+        <tr><td>Sachin</td><td>Sehwag</td><td>Kohli</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Dhoni</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Raina</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+      </table>
+    </div>
+    <paper-button raised>Event</paper-button>
+    </paper-card>
+    <!-- <span style="margin: 20px;"></span> -->
+    <paper-card elevation="4" heading="Some Heading" image="/images/rain_drops_2.jpg">
+    <div class="card-content">
+      <table>
+      <th cols="3">Team Members</th>
+        <tr><td>Sachin</td><td>Sehwag</td><td>Kohli</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Dhoni</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Raina</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+      </table>
+    </div>
+    <paper-button raised>Event</paper-button>
+    </paper-card>
+  <!-- </div>
+   <div layout flex horizontal style="text-align: center; margin: 20px;"> -->
+    <paper-card elevation="4" heading="Some Heading" image="/images/rain_drops_1.jpg">
+    <div class="card-content">
+      <table>
+      <th cols="3">Team Members</th>
+        <tr><td>Sachin</td><td>Sehwag</td><td>Kohli</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Dhoni</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Raina</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+      </table>
+    </div>
+    <paper-button raised>Event</paper-button>
+    </paper-card>
+    <!-- <span style="margin: 20px;"></span> -->
+    <paper-card elevation="4" heading="Some Heading" image="/images/rain_drops_3.jpg">
+    <div class="card-content">
+      <table>
+      <th cols="3">Team Members</th>
+        <tr><td>Sachin</td><td>Sehwag</td><td>Kohli</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Dhoni</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Raina</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+      </table>
+    </div>
+    <paper-button raised>Event</paper-button>
+    </paper-card>
+    <paper-card elevation="4" heading="Some Heading" image="/images/rain_drops_1.jpg">
+    <div class="card-content">
+      <table>
+      <th cols="3">Team Members</th>
+        <tr><td>Sachin</td><td>Sehwag</td><td>Kohli</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Dhoni</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Raina</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+      </table>
+    </div>
+    <paper-button raised>Event</paper-button>
+    </paper-card>
+    <!-- <span style="margin: 20px;"></span> -->
+    <paper-card elevation="4" heading="Some Heading" image="/images/rain_drops_3.jpg">
+    <div class="card-content">
+      <table>
+      <th cols="3">Team Members</th>
+        <tr><td>Sachin</td><td>Sehwag</td><td>Kohli</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Dhoni</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+        <tr><td>Ganguly</td><td>Dravid</td><td>Raina</td></tr>
+        <tr><td>Sachin</td><td>Sehwag</td><td>yuvraj</td></tr>
+      </table>
+    </div>
+    <paper-button raised>Event</paper-button>
+    </paper-card>
+  </div>
+  </paper-material>
+  
+  </template>
+  <script>
+    Polymer({
+
+      is: 'aquaura-teams',     
+
+    });
+  </script>
+</dom-module>
