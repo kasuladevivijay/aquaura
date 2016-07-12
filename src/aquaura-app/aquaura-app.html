@@ -5,6 +5,7 @@
 <link rel="import" href="../../src/aquaura-scoreboard/aquaura-scoreboard.html">
 <link rel="import" href="../../src/aquaura-teams/aquaura-teams.html">
 <link rel="import" href="../../src/aquaura-games/aquaura-games.html">
+<link rel="import" href="../../src/aquaura-logohanging/aquaura-logohanging.html">
 
 <dom-module id="aquaura-app">
 
@@ -53,18 +54,24 @@
         pattern="/:page"
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
+    <app-route
+        route="{{subroute}}"
+        pattern="/:subpage"
+        data="{{subrouteData}}">
+    </app-route>
 
     <app-drawer-layout fullbleed force-narrow>
 
       <!-- Drawer content -->
       <app-drawer>
-        <app-toolbar><span style="color: #999; font-weight: bold;">aquaura</span></app-toolbar>
+        <app-toolbar><span style="color: #999; font-weight: bold;">aquaura <sup>2016</sup></span></app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="home" href="/home">Home</a>
           <a name="scoreboard" href="/scoreboard">ScoreBoard</a>
           <a name="teams" href="/teams">Teams</a>
           <a name="games" href="/games">Games</a>
           <a name="about" href="/about">About</a>
+          <a name="gameone" href="/games/logohanging">Logo</a>
           
         </iron-selector>
       </app-drawer>
@@ -75,7 +82,7 @@
         <app-header condenses fixed effects="fullbleed">
           <app-toolbar>
             <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-            <div title spacer>aquaura</div>
+            <div title spacer><b>aquaura</b> <sup>2016</sup></div>
           </app-toolbar>
         </app-header>
 
@@ -85,6 +92,7 @@
           <aquaura-teams name="teams"></aquaura-teams>
           <aquaura-games name="games"></aquaura-games>
           <aquaura-about name="about"></aquaura-about>
+          <aquaura-logohanging name="gameone"></aquaura-logohanging>
           
         </iron-pages>
         
@@ -107,15 +115,25 @@
           reflectToAttribute: true,
           observer: '_pageChanged'
         },
+        subpage: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_subpageChanged'
+        },
 
       },
 
       observers: [
-        '_routePageChanged(routeData.page)'
+        '_routePageChanged(routeData.page)',
+        '_subroutePageChanged(subrouteData.subpage)'
       ],
 
       _routePageChanged: function(page) {
         this.page = page || 'home';
+      },
+
+      _subroutePageChanged: function(subpage) {
+        this.subpage = subpage || 'gameone';
       },
 
       _pageChanged: function(page) {
@@ -123,6 +141,12 @@
         this.importHref(
           this.resolveUrl('aquaura-' + page + '.html'), null, null, true);
         console.log("page details: ",page)
+      },
+      _subpageChanged: function(subpage) {
+        // load page import on demand.
+        this.importHref(
+          this.resolveUrl('aquaura-' + subpage + '.html'), null, null, true);
+        console.log("sub page details: ",subpage)
       }
 
     });

@@ -14,7 +14,7 @@
       }
 
       google-chart{
-        width: 560px;
+        width: 640px;
         height: 480px;
         margin: auto;
       }
@@ -26,33 +26,37 @@
 
 
     <paper-material elevation="3" layout flex>
-
       <paper-datatable data="{{data}}"  multi-selection>
 
       <paper-datatable-column header="Teams/Games" property="title" type="string" disable>
-
-
       </paper-datatable-column>
-    <paper-datatable-column header="gameOne" property="gameone" type="Number" sortable>
-            </paper-datatable-column>
-    <paper-datatable-column header="gameTwo" property="gametwo" type="Number" sortable>
-        </paper-datatable-column>
-    <paper-datatable-column header="gameThree" property="gamethree" type="Number" sortable>
-        </paper-datatable-column>
-    <paper-datatable-column header="Total" property="total" sortable type="Number" tooltip="Total Points till date">
-    </paper-datatable-column>
-    
+
+      <template is="dom-repeat" items={{items}}>
+        <paper-datatable-column
+                 header="{{item.header}}" 
+                 property="{{item.prop}}" 
+                 type="Number" 
+                 sortable 
+                 tooltip="{{item.header}}">
+      </paper-datatable-column>
+      </template>    
 
     </paper-datatable>
-
     </paper-material>
 
     <!-- chart -->
-  <paper-material elevation="2">
+  <paper-material elevation="3">
          <google-chart
              type='bar'
              options='{"title": "Aquaura-2016 | Total Points"}'
-             data='[["Team","Points"],["RCB",62],["CSK",72],["RR",63],["MI",64]]'>
+             data='[["Team","Points"],
+                    ["House of Rain",10],
+                    ["Toofani Pirates",20],
+                    ["Thundering Storms",40],
+                    ["MeghDoot",20],
+                    ["Tropical Thunder",30],
+                    ["Rainbow Splendour",60],
+                    ["CloudBurst",30]]'
     </google-chart>
   </paper-material>
   </template>
@@ -61,14 +65,24 @@
 
       is: 'aquaura-scoreboard',
 
+      ready: function(){
+        this.items = [
+                  {header: '3D Logo Hanging', prop: 'gameone'},
+                  {header: 'Total Points', prop: 'total'}
+          ]
+      },
+
       properties: {
         data: {
           type: Object,
           notify: true,
-          value: [{id:0, title: 'RCB', gameone: 10, gametwo: 29, gamethree: 23, total: 62},
-                  {id:1, title: 'CSK', gameone: 20, gametwo: 29, gamethree: 23, total: 72},
-                  {id:2, title: 'RR', gameone: 30, gametwo: 19, gamethree: 14, total: 63},
-                  {id:3, title: 'MI', gameone: 10, gametwo: 29, gamethree: 24, total: 64}
+          value: [{id:0, title: 'House of Rain', gameone: 0, total: 0},
+                  {id:1, title: 'Toofani Pirates', gameone: 0, total: 0},
+                  {id:2, title: 'Thundering Storms', gameone: 0, total: 0},
+                  {id:3, title: 'MeghDoot', gameone: 0, total: 0},
+                  {id:4, title: 'Tropical Thunder', gameone: 0, total: 0},
+                  {id:5, title: 'Rainbow Splendour', gameone: 0, total: 0},
+                  {id:6, title: 'CloudBurst', gameone: 0, total: 0}
                   ]
         }
       }

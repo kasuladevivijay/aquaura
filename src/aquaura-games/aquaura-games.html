@@ -7,43 +7,87 @@
       :host {
         display: block;
       }
+       a{
+    color: black;
+    text-decoration: none;
+   }
+
+   a:hover{
+    color: green;
+    text-decoration: underline;
+   }
 </style>
 <style is="custom-style">
-  
+  paper-card{
+    --paper-card-header-image:{
+      width: 100%;
+      height: 240px;
+    }
+
+    --paper-card-header-color: #fff;
+
+    }
 
 </style>
+  
   <paper-material elevation="2" layout flex style="margin:20px; text-align: center;">
       <h2 style="padding:10px;">aquaura-games</h2>
   </paper-material>
 
-  <paper-card elevation="3" layout flex  style="text-align: center; padding: 20px; margin: 20px;">
-      <paper-button data-dialog="logo"> Logo Making</paper-button>
-  </paper-card>
+  
+  <paper-material elevation="3" layout flex  style="padding: 20px; margin: 20px;">
+  <div layout flex horizontal style="margin: 10px; padding: 20px;">
 
-  <paper-dialog id="logo">
-  <h2>Logo Making</h2>
-  <paper-dialog-scrollable>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </paper-dialog-scrollable>
-  <div class="buttons">
-    <paper-button dialog-dismiss>Cancel</paper-button>
-    <paper-button dialog-confirm>OK</paper-button>
+  <template is="dom-repeat" items={{data}}>
+    <paper-card elevation="4" heading="{{item.name}}" image="{{item.image}}" style="margin: 20px;">
+    
+    <div class="card-content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
+      </p>
+    </div>
+    <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
+    </paper-icon-button>
+     <div class="card-actions">
+       <iron-collapse id="moreinfo" style="width:100%;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
+    </iron-collapse>
+     </div>
+    </paper-card>
+  </template>
+
+
   </div>
-</paper-dialog>
+  </paper-material>
+    
   
   </template>
   <script>
     Polymer({
 
-      is: 'aquaura-games',     
+      is: 'aquaura-games',
 
+      ready: function(){
+        this.data =[
+                  {name: '3D Logo Hanging', image: '/images/rain_drops_3.jpg', url: '/games/logohanging'},
+                  {name: '3D Logo Hanging', image: '/images/rain_drops_2.jpg', url: '/games/logohanging'}
+                  
+        ]
+      },    
+
+    });
+
+    document.addEventListener('WebComponentsReady', function() {
+      console.log("in main function");
+        function _toggle() {
+        var moreInfo = $("#moreinfo");
+              console.log("inside toggle");
+        var iconButton = Polymer.dom(event).localTarget;
+        iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up'
+                                          : 'hardware:keyboard-arrow-down';
+        moreInfo.toggle();
+      }
+      
     });
   </script>
 </dom-module>
