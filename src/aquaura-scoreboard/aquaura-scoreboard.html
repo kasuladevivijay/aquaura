@@ -45,20 +45,7 @@
     </paper-material>
 
     <!-- chart -->
-  <paper-material elevation="3">
-         <google-chart
-             type='bar'
-             options='{"title": "Aquaura-2016 | Total Points"}'
-             data='[["Team","Points"],
-                    ["House of Rain",10],
-                    ["Toofani Pirates",20],
-                    ["Thundering Storms",40],
-                    ["MeghDoot",20],
-                    ["Tropical Thunder",30],
-                    ["Rainbow Splendour",60],
-                    ["CloudBurst",30]]'
-    </google-chart>
-  </paper-material>
+  
   </template>
   <script>
     Polymer({
@@ -67,8 +54,11 @@
 
       ready: function(){
         this.items = [
-                  {header: '3D Logo Hanging', prop: 'gameone'},
-                  {header: 'Total Points', prop: 'total'}
+                  {header: 'Nomination', prop: 'nominy'},
+                  {header: 'Logo Hanging', prop: 'lh'},
+                  {header: 'Logo Judging', prop: 'lj'},
+                  {header: 'Online Game 1', prop: 'og1'},
+                  {header: 'Total', prop: 'total'}
           ]
       },
 
@@ -76,13 +66,13 @@
         data: {
           type: Object,
           notify: true,
-          value: [{id:0, title: 'House of Rain', gameone: 0, total: 0},
-                  {id:1, title: 'Toofani Pirates', gameone: 0, total: 0},
-                  {id:2, title: 'Thundering Storms', gameone: 0, total: 0},
-                  {id:3, title: 'MeghDoot', gameone: 0, total: 0},
-                  {id:4, title: 'Tropical Thunder', gameone: 0, total: 0},
-                  {id:5, title: 'Rainbow Splendour', gameone: 0, total: 0},
-                  {id:6, title: 'CloudBurst', gameone: 0, total: 0}
+          value: [{id:0, title: 'House of Rain', nominy: 0, lh:50, lj:0, og1:50, total: 100},
+                  {id:1, title: 'Toofani Pirates', nominy: 0, lh:50, lj:0, og1:65, total:115},
+                  {id:2, title: 'Thundering Storms', nominy: 0, lh:50, lj:0, og1:35, total: 85},
+                  {id:3, title: 'MeghDoot', nominy: 0, lh:50, lj:0, og1:50, total: 100},
+                  {id:4, title: 'Tropical Thunder', nominy: 50, lh:50, lj:0, og1:55, total: 155},
+                  {id:5, title: 'Rainbow Splendour', nominy: 100, lh:50, lj:0, og1:45, total: 195},
+                  {id:6, title: 'CloudBurst', nominy: 200, lh:50, lj:0, og1:60, total: 310}
                   ]
         }
       }

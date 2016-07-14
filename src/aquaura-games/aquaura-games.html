@@ -46,7 +46,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
       </p>
     </div>
-    <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
+    <paper-icon-button icon="hardware:keyboard-arrow-down" title="more info" onclick="_toggle()" style="float:right;">
     </paper-icon-button>
      <div class="card-actions">
        <iron-collapse id="moreinfo" style="width:100%;">
@@ -69,8 +69,8 @@
 
       ready: function(){
         this.data =[
-                  {name: '3D Logo Hanging', image: '/images/rain_drops_3.jpg', url: '/games/logohanging'},
-                  {name: '3D Logo Hanging', image: '/images/rain_drops_2.jpg', url: '/games/logohanging'}
+                  {name: '3D Logo Hanging', image: '/images/rain_drops_3.jpg'},
+                  
                   
         ]
       },    
@@ -79,15 +79,14 @@
 
     document.addEventListener('WebComponentsReady', function() {
       console.log("in main function");
-        function _toggle() {
-        var moreInfo = $("#moreinfo");
+    });
+
+    function _toggle() {
+        var moreInfo = document.getElementById('moreinfo');
               console.log("inside toggle");
-        var iconButton = Polymer.dom(event).localTarget;
-        iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up'
-                                          : 'hardware:keyboard-arrow-down';
+        
         moreInfo.toggle();
       }
-      
-    });
+
   </script>
 </dom-module>

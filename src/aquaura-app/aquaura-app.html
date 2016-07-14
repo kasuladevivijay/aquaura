@@ -54,11 +54,7 @@
         pattern="/:page"
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
-    <app-route
-        route="{{subroute}}"
-        pattern="/:subpage"
-        data="{{subrouteData}}">
-    </app-route>
+    
 
     <app-drawer-layout fullbleed force-narrow>
 
@@ -71,7 +67,7 @@
           <a name="teams" href="/teams">Teams</a>
           <a name="games" href="/games">Games</a>
           <a name="about" href="/about">About</a>
-          <a name="gameone" href="/games/logohanging">Logo</a>
+          
           
         </iron-selector>
       </app-drawer>
@@ -92,7 +88,7 @@
           <aquaura-teams name="teams"></aquaura-teams>
           <aquaura-games name="games"></aquaura-games>
           <aquaura-about name="about"></aquaura-about>
-          <aquaura-logohanging name="gameone"></aquaura-logohanging>
+          
           
         </iron-pages>
         
@@ -114,26 +110,16 @@
           type: String,
           reflectToAttribute: true,
           observer: '_pageChanged'
-        },
-        subpage: {
-          type: String,
-          reflectToAttribute: true,
-          observer: '_subpageChanged'
-        },
-
+        }
+        
       },
 
       observers: [
-        '_routePageChanged(routeData.page)',
-        '_subroutePageChanged(subrouteData.subpage)'
+        '_routePageChanged(routeData.page)'
       ],
 
       _routePageChanged: function(page) {
         this.page = page || 'home';
-      },
-
-      _subroutePageChanged: function(subpage) {
-        this.subpage = subpage || 'gameone';
       },
 
       _pageChanged: function(page) {
@@ -142,13 +128,7 @@
           this.resolveUrl('aquaura-' + page + '.html'), null, null, true);
         console.log("page details: ",page)
       },
-      _subpageChanged: function(subpage) {
-        // load page import on demand.
-        this.importHref(
-          this.resolveUrl('aquaura-' + subpage + '.html'), null, null, true);
-        console.log("sub page details: ",subpage)
-      }
-
+      
     });
 
   </script>
