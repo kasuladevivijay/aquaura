@@ -21,9 +21,10 @@
   paper-card{
     --paper-card-header-image:{
       width: 240px;
+      height:180px;
     }
 
-    --paper-card-header-color: #fff;
+    --paper-card-header-color: #000;
 
     }
     
@@ -49,27 +50,26 @@
     <paper-card elevation="4" heading="{{item.name}}" image="{{item.image}}" style="margin: 20px;">
     
       <paper-button raised data-dialog="scrolling">Details</paper-button>
-    
-    </paper-card>
-    
-  </template>
-
-  </div>
-  </paper-material>
-  <paper-dialog id="scrolling">
-      <h2>Scrolling</h2>
+      <paper-dialog id="scrolling">
+      <h2>{{item.name}}</h2>
       <paper-dialog-scrollable>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+        
         </paper-dialog-scrollable>
       <div class="buttons">
         <paper-button dialog-dismiss>Cancel</paper-button>
         <paper-button dialog-confirm autofocus>OK</paper-button>
       </div>
     </paper-dialog>
+    
+    </paper-card>
+    
+    
+  </template>
+
+  </div>
+  </paper-material>
+  
   </section>
   
   </template>
@@ -79,14 +79,16 @@
       is: 'aquaura-teams', 
       ready: function(){
         this.data = [
-                      {name: 'House of Rain', image: '/images/rain_drops_1.jpg', url: '/teams/house_of_rain'},
-                      {name: 'Toofani Pirates', image: '/images/rain_drops_2.jpg', url: '/teams/toofani_pirates'},
-                      {name: 'Thundering Storms', image: '/images/rain_drops_3.jpg', url: '/teams/thundering_storms'},
-                      {name: 'MeghDoot', image: '/images/rain_drops_1.jpg', url: '/teams/meghdoot'},
-                      {name: 'Tropical Thunder', image: '/images/rain_drops_2.jpg', url: '/teams/tropical_thunder'},
-                      {name: 'Rainbow Splendour', image: '/images/rain_drops_3.jpg', url: '/teams/rainbow_splendour'},
-                      {name: 'CloudBurst', image: '/images/rain_drops_1.jpg', url: '/teams/cloudburst'}
+                      {name: 'House of Rain', image: '/images/HouseOfRain.jpg', id: 'hr'},
+                      {name: 'Toofani Pirates', image: '/images/rain_drops_2.jpg', id: 'tp'},
+                      {name: 'Thundering Storms', image: '/images/thundering_storm.jpg', id: 'ts'},
+                      {name: 'MeghDoot', image: '/images/Meghdoot.png', id: 'md'},
+                      {name: 'Tropical Thunder', image: '/images/tropical_thunder.jpg', id:'tt' },
+                      {name: 'Rainbow Splendour', image: '/images/RainbowSplendour.jpg', id: 'rs' },
+                      {name: 'CloudBurst', image: '/images/cloudburst.jpg', id: 'cb' }
         ]
+
+       
       }    
 
     });

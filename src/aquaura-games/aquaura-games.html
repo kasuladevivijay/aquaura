@@ -24,8 +24,12 @@
       height: 240px;
     }
 
-    --paper-card-header-color: #fff;
+    --paper-card-header-color: #000;
 
+    }
+
+    --paper-card:{
+      margin-left:80px;
     }
 
 </style>
@@ -35,7 +39,7 @@
   </paper-material>
 
   
-  <paper-material elevation="3" layout flex  style="padding: 20px; margin: 20px;">
+  <paper-material elevation="3" layout flex  style="padding: 40px 160px; margin: 20px;">
   <div layout flex horizontal style="margin: 10px; padding: 20px;">
 
   <template is="dom-repeat" items={{data}}>
@@ -43,14 +47,14 @@
     
     <div class="card-content">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
+        {{item.content}}
       </p>
     </div>
     <paper-icon-button icon="hardware:keyboard-arrow-down" title="more info" onclick="_toggle()" style="float:right;">
     </paper-icon-button>
      <div class="card-actions">
        <iron-collapse id="moreinfo" style="width:100%;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
+      
     </iron-collapse>
      </div>
     </paper-card>
@@ -69,8 +73,9 @@
 
       ready: function(){
         this.data =[
-                  {name: '3D Logo Hanging', image: '/images/rain_drops_3.jpg'},
-                  
+                  {name: 'MAD AD', image: '/images/MadAd.jpg', content: 'test content'},
+                  {name: 'Online Game 1', image: '/images/OG1.jpg', content: 'test content2'},
+                  {name: '3D Logo Hanging', image: '/images/OG1.jpg', content: 'test content'},
                   
         ]
       },    
