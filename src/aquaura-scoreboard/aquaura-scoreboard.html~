@@ -67,13 +67,13 @@
         data: {
           type: Object,
           notify: true,
-          value: [{id:0, title: 'House of Rain', nominy: 0, lh:50, lj: 345, og1:50, madad:365, total: 100},
-                  {id:1, title: 'Toofani Pirates', nominy: 0, lh:50, lj: 305, og1:65, madad: 360, total:115},
-                  {id:2, title: 'Thundering Storms', nominy: 0, lh:50, lj:220, og1:35, madad: 315, total: 85},
-                  {id:3, title: 'MeghDoot', nominy: 0, lh:50, lj:300, og1:50, madad: 430, total: 100},
-                  {id:4, title: 'Tropical Thunder', nominy: 50, lh:50, lj: 350, og1:55, madad: 320, total: 155},
-                  {id:5, title: 'Rainbow Splendour', nominy: 100, lh:50, lj:320, og1:45, madad: 390, total: 195},
-                  {id:6, title: 'CloudBurst', nominy: 200, lh:50, lj:260, og1:60, madad:400, total: 310}
+          value: [{id:0, title: 'House of Rain', nominy: 0, lh:50, lj: 345, og1:50, madad:365, total: 810},
+                  {id:1, title: 'Toofani Pirates', nominy: 0, lh:50, lj: 305, og1:65, madad: 360, total:780},
+                  {id:2, title: 'Thundering Storms', nominy: 0, lh:50, lj:220, og1:35, madad: 315, total: 620},
+                  {id:3, title: 'MeghDoot', nominy: 0, lh:50, lj:300, og1:50, madad: 430, total: 830},
+                  {id:4, title: 'Tropical Thunder', nominy: 50, lh:50, lj: 350, og1:55, madad: 320, total: 875},
+                  {id:5, title: 'Rainbow Splendour', nominy: 100, lh:50, lj:320, og1:45, madad: 390, total: 855},
+                  {id:6, title: 'CloudBurst', nominy: 200, lh:50, lj:260, og1:60, madad:400, total: 970}
                   ]
         }
       }
