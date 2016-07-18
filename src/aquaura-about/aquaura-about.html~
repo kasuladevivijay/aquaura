@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../src/elements/elements.html">
+<link rel="import" href="../elements/elements.html">
 
-<dom-module id="aquaura-home">
+<dom-module id="aquaura-about">
   <template>
     <style>
       :host {
@@ -10,11 +10,11 @@
     </style>
     <style is="custom-style">
       app-box{
-        height: 480px;
+        height: 640px;
       }
       .first{
           --app-box-background-front-layer:{
-            background-image:url(../../images/rain_drops_3.jpg);
+            background-image:url(../../images/rain_drops_1.jpg);
             background-position: bottom;
             padding-bottom: 120px;
             margin-top: -20px;
@@ -61,38 +61,41 @@
         text-decoration: none;
         color: white;
       }
+      paper-material{
+      	      	text-align: center;
+      	      	margin:auto 20px;
+      }
     </style>
     <!-- App layout usage -->
     
-    <section>
-      <article>
+    
         
-        <h3 style="text-shadow: rgba(2px,4px, #f564ff);">Welcome to Aquaura 2016</h3>
-        <p>
-          check this space for all the happenings of this season of aquaura.
-        </p>
+        <paper-material elevation="3" layout flex>
+        	<h2 style="padding: 10px;">about</h2>
+        </paper-material>
         
+        
+        <paper-material elevation="3" layout flex>
+        	<p style="padding: 80px; font-size: 24px;">
+        		"Aquaura" is a annual Monsoon fun event hosted by CMAT.
+        		CMAT (Communication Measurement Action team)
+        		
+        	</p>
+        	<p style="padding: 80px; font-size: 24px;">Starting from 2004, CMAT is of the Corporate, by the corporate and for the Corporate involved in Employee Engagement activities, which builds
+        	up the fun and engagement of employees of corporate</p>
+        	
+        	<p style="padding: 80px; font-size: 24px;">This season is filled with loads of fun than before. CMAT wishes all the Best to every team </p>
+        </paper-material>
       </article>
-      <app-box class="first" effects="parallax-background"></app-box>
-    </section>
-    <section>
-      <article>
-        
-        <h3>Games, Points Table and Teams</h3>
-        <p>
-          Check every game , Points in this portal, Sort the Points table for the topper and Loser
-        </p>
-        <paper-button raised ><a href="/scoreboard">Points Table</a></a></paper-button>
-      </article>
-      <app-box class="second" effects="parallax-background"></app-box>
-    </section>
+      
+    
 
     <section>
       <article>
-      <h3>Send your awesome team photos to CMAT</h3>
-        <div style="background-color: #999; height: 180px; margin-top: 100px; ">
+      
+        <div style="background-color: #999; height: 180px; margin-top: 120px; ">
           <h4 style="padding-top:24px; opacity: 0.3;">&copy; 2016 - ecomm team - built using <iron-icon icon="icons:polymer"></iron-icon> PolymerJS</h4>
-        </div>
+        
         </span>
       </article>
     </section>
@@ -104,7 +107,7 @@
   <script>
     Polymer({
 
-      is: 'aquaura-home',
+      is: 'aquaura-about',
 
     });
   </script>

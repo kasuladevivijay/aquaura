@@ -1,0 +1,6 @@
+---
+applications:
+  - name: aquaura
+    buildpack: predix_openresty_buildpack
+    memory: 256M
+    stack: cflinuxfs2

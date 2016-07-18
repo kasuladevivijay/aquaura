@@ -71,7 +71,7 @@
         <p>
           check this space for all the happenings of this season of aquaura.
         </p>
-        
+        <paper-button raised ><a href="/scoreboard">Points Table</a></a></paper-button>
       </article>
       <app-box class="first" effects="parallax-background"></app-box>
     </section>

@@ -74,11 +74,9 @@
       ready: function(){
         this.data =[
                   {name: 'MAD AD', image: '/images/MadAd.jpg', 
-                  content: 'Add MAD-Ad for more Fun & Entertainment, Venue: Podium, Timing: 3PM 15-July. Check CMAT emails for more info.'},
-                  {name: 'Online Game 1', image: '/images/OG1.jpg', 
-                  content: 'Get ready to play the first Online Game @ 3.30PM -3:45PM 13-July, Check your emails for more info.'},
-                  {name: '3D Logo Hanging', image: '/images/OG1.jpg', 
-                  content: 'Your Logos can make you stand first, Hang your 3D logos. For Rules & info, Check CMAT emails.'},
+                  content: 'Add MAD-Ad for more Fun & Entertainment, Venue: Podium, Timing: 3PM July-15. Check CMAT emails for more info.'},
+                  {name: 'Online Game 1', image: '/images/OG1.jpg', content: 'test content2'},
+                  {name: '3D Logo Hanging', image: '/images/OG1.jpg', content: 'test content'},
                   
         ]
       },    

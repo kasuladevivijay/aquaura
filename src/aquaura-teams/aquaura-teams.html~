@@ -52,7 +52,7 @@
       <paper-button raised data-dialog="scrolling">{{item.name}}</paper-button>
           
     </paper-card>
-    <!-- <paper-dialog id="scrolling">
+    <paper-dialog id="scrolling">
       <h2><span>{{item.name}}</span></h2>
       <paper-dialog-scrollable>
         
@@ -62,7 +62,7 @@
         <paper-button dialog-dismiss>Cancel</paper-button>
         <paper-button dialog-confirm autofocus>OK</paper-button>
       </div>
-    </paper-dialog> -->
+    </paper-dialog>
     
     
   </template>
