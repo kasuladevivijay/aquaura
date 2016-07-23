@@ -1,0 +1,5 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/aquaura-app/aquaura-app.html",
+  "fragments": [],
+}
