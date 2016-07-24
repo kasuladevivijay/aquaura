@@ -1,5 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/google-chart/google-chart.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../elements/elements.html">
 
 
@@ -9,23 +9,61 @@
       :host {
         display: block;
       }
-      table{
-      	width: 400px;
-      }
-      tr{
-      	text-align: center;
-      }
+      /*
+      style for game list
+       
+      */
+      * {margin: 0; padding: 0;}
+
+div {
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+  width: 720px;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+paper-input{
+	float: right;
+	margin: 0 15px 0 0;
+}
     </style>
     <style is="custom-style">
       paper-material{
         margin: 20px;
       }
-		google-chart {
-  height: 300px;
-  width: 50em;
-}
+		
       
      </style>
+     <iron-ajax
+            auto
+            url="../../data/points.json"
+            handle-as="json"
+            last-response="{{data}}"></iron-ajax>
 
      <paper-material elevation="3" layout flex>
         <h3 style="text-align: center; padding: 10px;">aquaura-scoreboard</h3>
@@ -43,7 +81,8 @@
                  header="{{item.header}}" 
                  property="{{item.prop}}" 
                  type="Number" 
-                 sortable 
+                 sortable
+                 align="center" 
                  tooltip="{{item.header}}">
       </paper-datatable-column>
       </template>    
@@ -51,34 +90,110 @@
     </paper-datatable>
     </paper-material>
     
-    <paper-material elevation="3" layout flex style="text-align:center;padding:10px;">
+    <!--<paper-material elevation="3" layout flex  style="text-align: center; padding: 10px; margin: 20px;">
     	<h3>{{selectedItem.title}}</h3>
-    	<br>
-    	<google-chart
-  		type='bar'
-  		options='{"title": "Points Summary"}'
-  		data='{{data}}'>
-</google-chart>
-<canvas id="myChart" width="400" height="400"></canvas>
-    	<table summary="Points Summary" align="center" style="border:solid 2px;">
-    		<tr>
-				<td>Game</td><td>Points</td>    		
-    		</tr>
-    		<tr>
-				<td>Nomination</td> <td>{{selectedItem.nominy}}</td>     		
-    		</tr>
-			<tr>
-				<td>Logo Hanging</td> <td>{{selectedItem.lh}}</td>     		
-    		</tr>
-    		<tr>
-				<td>Logo Judging</td> <td>{{selectedItem.lj}}</td>     		
-    		</tr>
-			<tr>
-				<td>Online Game 1</td> <td>{{selectedItem.og1}}</td>     		
-    		</tr>
-		</table>
+    	<p>Total Points: <span>{{selectedItem.total}}</span></p>
+    	<div layout flex horizontal style="margin: 10px; padding: 20px;">
+		<paper-card elevation="4"  style="margin: 20px;">    	
+    		<img src="{{selectedItem.image}}" width="300" height="240" style="float:left;" />
+    	</paper-card>
+    	<paper-card elevation="4" style="margin: 20px;">
+    	 <div>
+  			<h2>HelvetiList</h2>
+  				<ul>
+   			 <li><a href="#">Zurich</a></li>
+   			 <li><a href="#">Geneva</a></li>
+   			 <li><a href="#">Winterthur</a></li>
+   			 <li><a href="#">Lausanne</a></li>
+    			 <li><a href="#">Lucerne</a></li>
+  				</ul>
+		</div>
+    	<ul type="none">
+			<li>Nomination 		: <span>{{selectedItem.nominy}}</span></li>
+			<li>Logo Hanging 		: <span>{{selectedItem.lh}}</span></li> 
+			<li>Logo Judging 		: <span>{{selectedItem.lj}}</span></li> 
+			<li>Online Game 1 	: <span>{{selectedItem.og1}}</span></li> 
+			<li>Mad Adz 			: <span>{{selectedItem.madad}}</span></li> 
+			<li>Online Game 2 	: <span>{{selectedItem.og2}}</span></li>
+			<li>Online Game 3		: <span>{{selectedItem.og3}}</span></li> 
+			<li>Online Game 4		: <span>{{selectedItem.og4}}</span></li>
+			<li>Caterpillar Walk	: <span>{{selectedItem.og4}}</span></li>  
+    	</ul> 
     	
-    </paper-material>
+		</paper-card>
+		</div>
+    	
+    </paper-material>-->
+    <paper-material elevation="3" layout flex style="text-align:center;padding-top:20px;padding-left:auto;">
+    	<h3>{{selectedItem.title}}</h3>
+    	<p>Total Points: <span>{{selectedItem.total}}</span></p>
+    	<br>
+        <div style="margin:10px 240px;">
+  <ul>
+  	
+    <li>
+      <img src="../../images/surprise.jpg" width="240" height="100" >
+      <h3>Caterpillar Walk</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.cw}}" label="Game Points"></paper-input>
+    </li>
+    
+     <li>
+      <img src="../../images/OG2.jpg" width="240" height="100" >
+      <h3>Online Game 4</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.og4}}" label="Game Points"></paper-input>
+    </li>
+    <li>
+      <img src="../../images/OG1.jpg" width="240" height="100" >
+      <h3>Online Game 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.og3}}" label="Game Points"></paper-input>
+    </li>
+      
+    <li>
+      <img src="../../images/OG2.jpg" >
+      <h3>Online Game 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.og2}}" label="Game Points"></paper-input>
+    </li>
+
+    <li>
+      <img src="../../images/MadAd.jpg" >
+      <h3>Mad Adz</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.madad}}" label="Game Points"></paper-input>
+    </li>
+
+    <li>
+      <img src="../../images/OG1.jpg" >
+      <h3>Online Game 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.og1}}" label="Game Points"></paper-input>
+    </li> 
+    <li>
+      <img src="../../images/3DLogo.jpg" >
+      <h3>Logo Judging</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.lj}}" label="Game Points"></paper-input>
+    </li>
+
+    <li>
+      <img src="../../images/3DLogo.jpg" >
+      <h3>Logo Hanging</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.lh}}" label="Game Points"></paper-input>
+    </li>
+
+    <li>
+      <img src="../../images/rain_drops_1.jpg" >
+      <h3>Nomination</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>
+      <paper-input value="{{selectedItem.nominy}}" label="Game Points"></paper-input>
+    </li>
+  </ul>
+</div>
+     </paper-material>
 
     <!-- chart -->
   
@@ -94,7 +209,7 @@
                   {header: 'Logo Hanging', prop: 'lh'},
                   {header: 'Logo Judging', prop: 'lj'},
                   {header: 'Online Game 1', prop: 'og1'},
-                  {header: 'Mad Ad', prop: 'madad'},
+                  {header: 'Mad Adz', prop: 'madad'},
                   {header: 'Online Game 2', prop: 'og2'},
                   {header: 'Online Game 3', prop: 'og3'},
                   {header: 'Online Game 4', prop: 'og4'},
@@ -106,15 +221,7 @@
       properties: {
         data: {
           type: Object,
-          notify: true,
-          value: [{id:0, title: 'House of Rain', nominy: 0, lh:50, lj: 345, og1:50, madad:365, og2: 0, og3:0, og4:170, cw:600 , total: 1580},
-                  {id:1, title: 'Toofani Pirates', nominy: 0, lh:50, lj: 305, og1:65, madad: 360,og2: 0, og3:0, og4:190, cw:480 , total:1450},
-                  {id:2, title: 'Thundering Storms', nominy: 0, lh:50, lj:220, og1:35, madad: 315,og2: 0, og3:0,og4:180, cw:240 ,  total: 1040},
-                  {id:3, title: 'MeghDoot', nominy: 0, lh:50, lj:300, og1:50, madad: 430, og2: 0, og3:0, og4:160, cw:940 ,total: 1930},
-                  {id:4, title: 'Tropical Thunder', nominy: 50, lh:50, lj: 350, og1:55, madad: 320, og2: 0, og3:0, og4:200,cw:380 , total: 1405},
-                  {id:5, title: 'Rainbow Splendour', nominy: 100, lh:50, lj:320, og1:45, madad: 390, og2: 0, og3:0, og4:190,cw:820 , total: 1915},
-                  {id:6, title: 'CloudBurst', nominy: 200, lh:50, lj:260, og1:60, madad:400, og2:0, og3:0, og4:170, cw:1600 ,total: 2740}
-                  ]
+          notify: true
         }
       } 
     	
@@ -122,45 +229,6 @@
     
     document.addEventListener('WebComponentsReady', function() {
       console.log("in main function");
-    });
-    
-    var ctx = document.getElementById("#myChart");
-    console.log('ctx: ',ctx);
-    var myChart = new Chart(ctx, {
-			type: 'bar',
-			data: {
-        		labels: ["Nomination", "LOGO Hanging", "LOGO Judgement", "OG1", "Mad Ad", "OG2", "OG3", "OG4", "Caterpillar Walk"],
-        		datasets: [{
-            	label: '# of Points',
-            	data: [200,50,260,60,400,0,0,170,1600],
-            	backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
-            ],
-            borderWidth: 1
-            }]
-          },
-          options: {
-          responsive: true,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }     
-    });
-    
-    
-    
-    
+    });  
   </script>
 </dom-module>
