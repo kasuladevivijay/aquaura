@@ -1,10 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../src/elements/elements.html">
-<link rel="import" href="../../src/aquaura-home/aquaura-home.html">
 <link rel="import" href="../../src/aquaura-about/aquaura-about.html">
 <link rel="import" href="../../src/aquaura-scoreboard/aquaura-scoreboard.html">
-<link rel="import" href="../../src/aquaura-teams/aquaura-teams.html">
-<link rel="import" href="../../src/aquaura-games/aquaura-games.html">
+
 
 
 <dom-module id="aquaura-app">
@@ -62,10 +60,7 @@
       <app-drawer>
         <app-toolbar><span style="color: #999; font-weight: bold;">aquaura <sup>2016</sup></span></app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="home" href="/home">Home</a>
-          <a name="scoreboard" href="/scoreboard">ScoreBoard</a>
-          <a name="teams" href="/teams">Teams</a>
-          <a name="games" href="/games">Games</a>
+          <a name="scoreboard" href="/scoreboard">ScoreBoard</a>        
           <a name="about" href="/about">About</a>
           
           
@@ -83,13 +78,8 @@
         </app-header>
 
         <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
-          <aquaura-home name="home"></aquaura-home>
           <aquaura-scoreboard name="scoreboard"></aquaura-scoreboard>
-          <aquaura-teams name="teams"></aquaura-teams>
-          <aquaura-games name="games"></aquaura-games>
-          <aquaura-about name="about"></aquaura-about>
-          
-          
+          <aquaura-about name="about"></aquaura-about>         
         </iron-pages>
         
       </app-header-layout>
@@ -119,7 +109,7 @@
       ],
 
       _routePageChanged: function(page) {
-        this.page = page || 'home';
+        this.page = page || 'scoreboard';
       },
 
       _pageChanged: function(page) {
