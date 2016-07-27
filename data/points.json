@@ -1,9 +1,9 @@
 [
-{"id":"0", "title": "House of Rain", "nominy": "0", "lh":"50", "lj": "345", "og1":"50", "madad":"365", "og2": "170", "og3":"100", "og4":"170", "cw":"600" , "total": "1850", "image":"../../images/HouseOfRain.jpg"},
-{"id":"1", "title": "Toofani Pirates", "nominy": 0, "lh":"50", "lj": "305", "og1":"65", "madad": "360","og2": "120", "og3":"90", "og4":"190", "cw":"480" , "total":"1660", "image":"../../images/toofani_pirates.jpg"},
-{"id":"2", "title": "Thundering Storms", "nominy": "0", "lh":"50", "lj":"220", "og1":"35", "madad": "315","og2": "170", "og3":"100","og4":"180", "cw":"240" ,  "total": "1320", "image":"../../images/thundering_storm.jpg"},
-{"id":"3", "title": "MeghDoot", "nominy": "0", "lh":"50", "lj":"300", "og1":"50", "madad": "430", "og2": "90", "og3":"100", "og4":"160", "cw":"940" ,"total": "2120", "image":"../../images/Meghdoot.png"},
-{"id":"4", "title": "Tropical Thunder", "nominy": "50", "lh":"50", "lj": "350", "og1":"55", "madad": "320", "og2": "170", "og3":"100", "og4":"200","cw":"380" , "total": "1675", "image":"../../images/tropical_thunder.jpg"},
-{"id":"5", "title": "Rainbow Splendour", "nominy": "100", "lh":"50", "lj":"320","og1":"45", "madad": "390", "og2": "150", "og3":"100", "og4":"190","cw":"820" , "total": "2165", "image":"../../images/RainbowSplendour.jpg"},
-{"id":"6", "title": "CloudBurst", "nominy": "200", "lh":"50", "lj":"260", "og1":"60", "madad":"400", "og2":"170", "og3":"100", "og4":"170", "cw":"1600" ,"total": "3010", "image":"../../images/cloudburst.jpg"}
+{"id":"0", "title": "House of Rain", "nominy": "0", "lh":"50", "lj": "345", "og1":"50", "madad":"365", "og2": "170", "og3":"100", "og4":"170", "cw":"600" ,"fun":"0", "total": "1850", "image":"../../images/HouseOfRain.jpg"},
+{"id":"1", "title": "Toofani Pirates", "nominy": "0", "lh":"50", "lj": "305", "og1":"65", "madad": "360","og2": "120", "og3":"90", "og4":"190", "cw":"480" ,"fun":"0", "total":"1660", "image":"../../images/toofani_pirates.jpg"},
+{"id":"2", "title": "Thundering Storms", "nominy": "0", "lh":"50", "lj":"220", "og1":"35", "madad": "315","og2": "170", "og3":"100","og4":"180", "cw":"240" , "fun":"0", "total": "1320", "image":"../../images/thundering_storm.jpg"},
+{"id":"3", "title": "MeghDoot", "nominy": "0", "lh":"50", "lj":"300", "og1":"50", "madad": "430", "og2": "90", "og3":"100", "og4":"160", "cw":"940" ,"fun":"0","total": "2120", "image":"../../images/Meghdoot.png"},
+{"id":"4", "title": "Tropical Thunder", "nominy": "50", "lh":"50", "lj": "350", "og1":"55", "madad": "320", "og2": "170", "og3":"100", "og4":"200","cw":"380" ,"fun":"0", "total": "1675", "image":"../../images/tropical_thunder.jpg"},
+{"id":"5", "title": "Rainbow Splendour", "nominy": "100", "lh":"50", "lj":"320","og1":"45", "madad": "390", "og2": "150", "og3":"100", "og4":"190","cw":"820" ,"fun":"0", "total": "2165", "image":"../../images/RainbowSplendour.jpg"},
+{"id":"6", "title": "CloudBurst", "nominy": "200", "lh":"50", "lj":"260", "og1":"60", "madad":"400", "og2":"170", "og3":"100", "og4":"170", "cw":"1600" ,"fun":"0","total": "3010", "image":"../../images/cloudburst.jpg"}
 ]

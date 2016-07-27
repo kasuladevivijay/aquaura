@@ -105,6 +105,13 @@ paper-input{
     </li>
 
     <li>
+      <img src="../../images/fun.jpg" width="240" height="100" >
+      <h3>Funtakshari</h3>
+      <p><strong>Funtakshari:</strong> Aquaura brings to you Funtakshari.!!! Join your Friends n colleagues this noon to  make this monsoon musical by playing Funtakshari, Time: 3:30 PM, Venue: Podium.</p>
+      <paper-input value="{{selectedItem.fun}}" label="Game Points"></paper-input>
+    </li>
+
+    <li>
       <img src="../../images/surprise.jpg" width="240" height="100" >
       <h3>Caterpillar Walk</h3>
       <p><strong>Friday Surprise:</strong> Aquaura brings you another Fun Friday.!!!Get ready @ 3 P.M on 22<sup>nd</sup> July, Compete and Win. For more details check your email inbox.</p>
@@ -178,6 +185,7 @@ paper-input{
 
       ready: function(){
         this.items = [
+                  {header: 'Total', prop: 'total'},
                   {header: 'Nomination', prop: 'nominy'},
                   {header: 'Logo Hanging', prop: 'lh'},
                   {header: 'Logo Judging', prop: 'lj'},
@@ -186,8 +194,9 @@ paper-input{
                   {header: 'Online Game 2', prop: 'og2'},
                   {header: 'Online Game 3', prop: 'og3'},
                   {header: 'Online Game 4', prop: 'og4'},
-						{header: 'Caterpillar Walk', prop: 'cw'},
-                  {header: 'Total', prop: 'total'}
+						      {header: 'Caterpillar Walk', prop: 'cw'},
+                  {header: 'Funtakshari', prop: 'fun'},
+                  
           ]
       },
 
