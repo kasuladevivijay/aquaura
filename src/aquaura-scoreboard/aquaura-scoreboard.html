@@ -3,6 +3,7 @@
 <link rel="import" href="../elements/elements.html">
 
 
+
 <dom-module id="aquaura-scoreboard">
   <template>
     <style>
@@ -63,7 +64,8 @@ paper-input{
             auto
             url="../../data/points.json"
             handle-as="json"
-            last-response="{{data}}"></iron-ajax>
+            last-response="{{data}}"
+            loading="{{loading}}"></iron-ajax>
 
      <paper-material elevation="3" layout flex>
         <h3 style="text-align: center; padding: 10px;">scoreboard</h3>
@@ -71,6 +73,7 @@ paper-input{
 
 
     <paper-material elevation="3" layout flex>
+    	<paper-spinner action="{{loading}}"></paper-spinner>
       <paper-datatable data="{{data}}"  selectable selected-item="{{selectedItem}}">
 
       <paper-datatable-column header="Teams/Games" property="title" type="string" disable>
